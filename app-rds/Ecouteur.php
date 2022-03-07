@@ -4,13 +4,13 @@ class Ecouteur implements JsonSerializable
   public static $filtres =
     array(
       'id' => FILTER_VALIDATE_INT,
-      'nom' => FILTER_SANITIZE_ENCODED,
-      'marque' => FILTER_SANITIZE_ENCODED,
-      'couleur' => FILTER_SANITIZE_ENCODED,
-      'autonomie' => FILTER_SANITIZE_ENCODED,
-      'reductionBruit' => FILTER_SANITIZE_ENCODED,
-      'ecouteEnvironnement' => FILTER_SANITIZE_ENCODED,
-      'resistanceEau' => FILTER_SANITIZE_ENCODED
+      'nom' => FILTER_SANITIZE_STRING,
+      'marque' => FILTER_SANITIZE_STRING,
+      'couleur' => FILTER_SANITIZE_STRING,
+      'autonomie' => FILTER_SANITIZE_STRING,
+      'reductionBruit' => FILTER_SANITIZE_STRING,
+      'ecouteEnvironnement' => FILTER_SANITIZE_STRING,
+      'resistanceEau' => FILTER_SANITIZE_STRING
     );
 
   protected $id;
