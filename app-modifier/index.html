@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Écouteurs sans fil</title>
+        <link rel="stylesheet" href="decoration/application.css">
+
+        <script src="Ecouteur.js"></script>
+        <script src="EcouteurDAO.js"></script>
+        <script src="VueEcouteur.js"></script>
+        <script src="VueListeEcouteur.js"></script>
+        <script src="VueAjouterEcouteur.js"></script>
+        <script src="VueModifierEcouteur.js"></script>
+
+        <script defer src="Application.js"></script>
+    </head>
+
+    <body>
+
+        <div id="page-chargement-application">Chargement de l'application liste d'écouteurs</div>
+
+        <script type="plain/text" id="html-vue-liste-ecouteur">
+        <div class="page">
+            <h1>Liste des écouteurs</h1>
+            <a class="action" href="#ajouter-ecouteur">Ajouter des écouteurs</a>
+            <ul id="liste-ecouteur">
+              <li><a href="#ecouteur/{Ecouteur.id}" class="liste-ecouteur-item">{Ecouteur.marque} {Ecouteur.nom}</a>
+                <a href="#modifier/{Ecouteur.id}" class="action">Modifier</a>
+              </li>
+            </ul>
+        </div>
+        </script>
+
+        <script type="plain/text" id="html-vue-ecouteur">
+            <div class="page">
+              <h1>Écouteurs</h1>
+              <h2 id="ecouteur-nom"></h2>
+              <span>Marque</span>
+              <p id="ecouteur-marque"></p>
+              <span>Couleur</span>
+              <p id="ecouteur-couleur"></p>
+              <span>Autonomie</span>
+              <p id="ecouteur-autonomie"></p>
+              <span>Réduction active de bruit</span>
+              <p id="ecouteur-reductionBruit"></p>
+              <span>Écoute de l'environnement</span>
+              <p id="ecouteur-ecouteEnvironnement"></p>
+              <span>Résistance à l'eau</span>
+              <p id="ecouteur-resistanceEau"></p>
+              <a href="#" class="action">Revenir &agrave; la liste</a>
+            </div>
+        </script>
+
+        <script type="plain/text" id="html-vue-ajouter-ecouteur">
+            <div class="page">
+              <h1>Ajouter des écouteurs sans fil</h1>
+              <form id="formulaire-ajouter">
+                <fieldset>
+                  <legend>Identification des écouteurs</legend>
+                  <div>
+                    <label for="ecouteur-nom">Nom</label>
+                    <input type="text" id="ecouteur-nom"/>
+                  </div>
+                  <div>
+                    <label for="ecouteur-marque">Marque</label>
+                    <input type="text" id="ecouteur-marque"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>D&eacute;tails sur les écouteurs</legend>
+                  <div>
+                    <label for="ecouteur-couleur">Couleur</label>
+                    <textarea id="ecouteur-couleur"></textarea>
+                  </div>
+                  <div>
+                    <label for="ecouteur-autonomie">Autonomie</label>
+                    <textarea id="ecouteur-autonomie"></textarea>
+                  </div>
+                  <div>
+                    <label for="ecouteur-reductionBruit">Réduction active de bruit</label>
+                    <textarea id="ecouteur-reductionBruit"></textarea>
+                  </div>
+                  <div>
+                    <label for="ecouteur-ecouteEnvironnement">Écoute de l'environnement</label>
+                    <textarea id="ecouteur-ecouteEnvironnement"></textarea>
+                  </div>
+                  <div>
+                    <label for="ecouteur-resistanceEau">Résistance à l'eau</label>
+                    <textarea id="ecouteur-resistanceEau"></textarea>
+                  </div>
+                </fieldset>
+                <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+              </form>
+              <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
+            </div>
+        </script>
+
+        <script type="plain/text" id="html-vue-modifier-ecouteur">
+          <div class="page">
+            <h1>Modifier des écouteurs</h1>
+            <form id="formulaire-modifier">
+              <fieldset>
+                <legend>Identification des écouteurs</legend>
+                <div>
+                  <label for="ecouteur-nom">Nom</label>
+                  <input type="text" id="ecouteur-nom" value=""/>
+                </div>
+                <div>
+                  <label for="ecouteur-marque">Marque</label>
+                  <input type="text" id="ecouteur-marque" value=""/>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>D&eacute;tails sur les écouteurs</legend>
+                <div>
+                  <label for="ecouteur-couleur">Couleurs des écouteurs</label>
+                  <textarea id="ecouteur-couleur" value=""></textarea>
+                </div>
+                <div>
+                  <label for="ecouteur-autonomie">Autonomie des écouteurs</label>
+                  <textarea id="ecouteur-autonomie" value=""></textarea>
+                </div>
+                <div>
+                  <label for="ecouteur-reductionBruit">Option de réduction de bruit</label>
+                  <textarea id="ecouteur-reductionBruit" value=""></textarea>
+                </div>
+                <div>
+                  <label for="ecouteur-ecouteEnvironnement">Option d'écoute de l'environnement</label>
+                  <textarea id="ecouteur-ecouteEnvironnement" value=""></textarea>
+                </div>
+                <div>
+                  <label for="ecouteur-resistanceEau">Résistance à l'eau</label>
+                  <textarea id="ecouteur-resistanceEau" value=""></textarea>
+                </div>
+              </fieldset>
+              <input class="action" type="submit" id="enregistrer" value="Modifier"/>
+            </form>
+            <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
+          </div>
+        </script>
+    </body>
+</html>
