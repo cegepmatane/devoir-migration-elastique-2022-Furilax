@@ -3,6 +3,7 @@ class VueModifierEcouteur {
     constructor() {
         this.html = document.getElementById("html-vue-modifier-ecouteur").innerHTML;
         this.actionModifierEcouteur = null;
+        this.ecouteur = null;
     }
 
     initialiserEcouteur(ecouteur) {
@@ -29,17 +30,16 @@ class VueModifierEcouteur {
 
     enregistrer(evenement) {
         evenement.preventDefault();
+        
+        this.ecouteur.nom = document.getElementById("ecouteur-nom").value;
+        this.ecouteur.marque = document.getElementById("ecouteur-marque").value;
+        this.ecouteur.couleur = document.getElementById("ecouteur-couleur").value;
+        this.ecouteur.autonomie = document.getElementById("ecouteur-autonomie").value;
+        this.ecouteur.reductionBruit = document.getElementById("ecouteur-reductionBruit").value;
+        this.ecouteur.ecouteEnvironnement = document.getElementById("ecouteur-ecouteEnvironnement").value;
+        this.ecouteur.resistanceEau = document.getElementById("ecouteur-resistanceEau").value;
 
-        let id = this.ecouteur.id;
-        let nom = document.getElementById("ecouteur-nom").value;
-        let marque = document.getElementById("ecouteur-marque").value;
-        let couleur = document.getElementById("ecouteur-couleur").value;
-        let autonomie = document.getElementById("ecouteur-autonomie").value;
-        let reductionBruit = document.getElementById("ecouteur-reductionBruit").value;
-        let ecouteEnvironnement = document.getElementById("ecouteur-ecouteEnvironnement").value;
-        let resistanceEau = document.getElementById("ecouteur-resistanceEau").value;
-
-        this.actionModifierEcouteur(new Ecouteur(nom, marque, couleur, autonomie, reductionBruit, ecouteEnvironnement, resistanceEau, id));
+        this.actionModifierEcouteur(this.ecouteur);
     }
 
 }
