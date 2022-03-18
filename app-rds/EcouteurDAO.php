@@ -73,6 +73,7 @@ class EcouteurDAO extends Accesseur implements EcouteurSQL
     $demandeModifEcouteur->bindValue(':reductionBruit', $ecouteur->reductionBruit, PDO::PARAM_STR);
     $demandeModifEcouteur->bindValue(':ecouteEnvironnement', $ecouteur->ecouteEnvironnement, PDO::PARAM_STR);
     $demandeModifEcouteur->bindValue(':resistanceEau', $ecouteur->resistanceEau, PDO::PARAM_STR);
+    $demandeModifEcouteur->bindValue(':id', $ecouteur->id, PDO::PARAM_INT);
     $demandeModifEcouteur->execute();
     return EcouteurDAO::$baseDeDonnees->lastInsertId();
   }
